@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-bitarray = "1.7.1"
+bitarray = "2.7.3"
 
 [dev-packages]
 

@@ -56,7 +56,13 @@ class MD5(object):
 
         # For the remainder of the MD5 algorithm, all values are in
         # little endian, so transform the bit array to little endian.
-        return bitarray(bit_array, endian="little")
+        b = bitarray(bit_array, 'little')
+        b.bytereverse()
+        if len(bit_array) % 8:
+            # copy last few bits directly
+            p = 8 * (bits2bytes(len(bit_array)) - 1)
+            b[p:] = bit_array[p:]
+        return b
 
     @classmethod
     def _step_2(cls, step_1_result):
