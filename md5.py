@@ -12,6 +12,7 @@ from math import (
 )
 
 from bitarray import bitarray
+from bitarray.util import bits2bytes
 
 
 class MD5Buffer(Enum):
